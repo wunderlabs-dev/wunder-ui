@@ -9,11 +9,11 @@ const meta = {
   argTypes: {
     variant: {
       control: "select",
-      options: ["primary", "secondary", "ghost"],
+      options: ["link", "primary", "secondary", "contained", "success", "error"],
     },
     size: {
       control: "select",
-      options: ["sm", "md", "lg"],
+      options: ["default", "icon"],
     },
   },
 } satisfies Meta<typeof Button>;
@@ -36,23 +36,38 @@ export const Secondary: Story = {
   },
 };
 
-export const Ghost: Story = {
+export const Contained: Story = {
   args: {
-    variant: "ghost",
+    variant: "contained",
     children: "Button",
   },
 };
 
-export const Small: Story = {
+export const Link: Story = {
   args: {
-    size: "sm",
-    children: "Small",
+    variant: "link",
+    children: "Button",
   },
 };
 
-export const Large: Story = {
+export const Success: Story = {
   args: {
-    size: "lg",
-    children: "Large",
+    variant: "success",
+    children: "Button",
+  },
+};
+
+export const Error: Story = {
+  args: {
+    variant: "error",
+    children: "Button",
+  },
+};
+
+export const Icon: Story = {
+  args: {
+    variant: "primary",
+    size: "icon",
+    children: "→",
   },
 };

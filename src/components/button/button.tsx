@@ -1,20 +1,56 @@
-import type { ButtonHTMLAttributes } from "react";
+import type { ComponentProps } from "react";
+import { cva, type VariantProps } from "class-variance-authority";
+import { Slot } from "radix-ui";
 
-type ButtonVariant = "primary" | "secondary" | "ghost";
-type ButtonSize = "sm" | "md" | "lg";
+import { cn } from "@/helpers/utils";
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: ButtonVariant;
-  size?: ButtonSize;
+const buttonVariants = cva("", {
+  variants: {
+    variant: {
+      link: "",
+      primary: "",
+      secondary: "",
+      contained: "",
+      success: "",
+      error: "",
+    },
+    size: {
+      default: "",
+      icon: "",
+    },
+  },
+  defaultVariants: {
+    variant: "primary",
+    size: "default",
+  },
+});
+
+type ButtonVariant = NonNullable<VariantProps<typeof buttonVariants>["variant"]>;
+type ButtonSize = NonNullable<VariantProps<typeof buttonVariants>["size"]>;
+
+interface ButtonProps extends ComponentProps<"button">, VariantProps<typeof buttonVariants> {
+  asChild?: boolean;
 }
 
-const Button = ({ variant = "primary", size = "md", children, ...props }: ButtonProps) => {
+const Button = ({
+  className,
+  variant = "primary",
+  size = "default",
+  asChild = false,
+  ...props
+}: ButtonProps) => {
+  const Comp = asChild ? Slot.Root : "button";
+
   return (
-    <button data-variant={variant} data-size={size} {...props}>
-      {children}
-    </button>
+    <Comp
+      data-slot="button"
+      data-variant={variant}
+      data-size={size}
+      className={cn(buttonVariants({ variant, size, className }))}
+      {...props}
+    />
   );
 };
 
-export { Button };
+export { Button, buttonVariants };
 export type { ButtonProps, ButtonVariant, ButtonSize };

@@ -45,7 +45,7 @@ src/
 - Errors are values: structured error types with context, no bare `catch {}`
 - Name by what it does in the domain, not how it's implemented
 - Comments explain _why_, never temporal context or what changed
-- Avoid primitives: use named constants instead of raw strings, numbers, or booleans (e.g. `const SIZE_SM = "sm" as const`, not `"sm"` inline)
+- Avoid magic primitives in logic: use named constants for raw strings, numbers, or booleans that appear in conditionals or repeated logic. String literals in type-constrained contexts (CVA variants, object keys, default values) are fine as-is
 
 ## Components
 
