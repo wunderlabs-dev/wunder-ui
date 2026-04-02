@@ -1,6 +1,9 @@
 @import "tailwindcss";
+@import "@fontsource-variable/host-grotesk";
 
 @theme {
+  --font-sans: "Host Grotesk Variable", sans-serif;
+
   --color-gray-50: #ffffff;
   --color-gray-100: #b5b5b5;
   --color-gray-200: #808080;
@@ -27,4 +30,12 @@
 
   --shadow-card-inset:
     inset 1px 1px 0px rgba(255, 255, 255, 0.2), inset -1px -1px 0px rgba(255, 255, 255, 0.1);
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }

@@ -6,6 +6,12 @@ const meta = {
   title: "Components/Button",
   component: Button,
   tags: ["autodocs"],
+  parameters: {
+    backgrounds: {
+      default: "dark",
+      values: [{ name: "dark", value: "#191919" }],
+    },
+  },
   argTypes: {
     variant: {
       control: "select",
@@ -25,49 +31,57 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     variant: "primary",
-    children: "Button",
+    children: "Primary",
+  },
+};
+
+export const PrimaryDisabled: Story = {
+  args: {
+    variant: "primary",
+    children: "Primary",
+    disabled: true,
+  },
+};
+
+export const PrimaryIcon: Story = {
+  args: {
+    variant: "primary",
+    size: "icon",
+    children: "→",
   },
 };
 
 export const Secondary: Story = {
   args: {
     variant: "secondary",
-    children: "Button",
+    children: "Secondary",
   },
 };
 
 export const Contained: Story = {
   args: {
     variant: "contained",
-    children: "Button",
+    children: "Contained",
   },
 };
 
 export const Link: Story = {
   args: {
     variant: "link",
-    children: "Button",
+    children: "Link",
   },
 };
 
 export const Success: Story = {
   args: {
     variant: "success",
-    children: "Button",
+    children: "Success",
   },
 };
 
 export const Error: Story = {
   args: {
     variant: "error",
-    children: "Button",
-  },
-};
-
-export const Icon: Story = {
-  args: {
-    variant: "primary",
-    size: "icon",
-    children: "→",
+    children: "Error",
   },
 };
