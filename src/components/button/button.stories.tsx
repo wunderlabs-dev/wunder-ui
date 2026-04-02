@@ -19,7 +19,7 @@ const meta = {
     },
     size: {
       control: "select",
-      options: ["default", "icon"],
+      options: ["default", "sm", "icon"],
     },
   },
 } satisfies Meta<typeof Button>;
@@ -40,6 +40,14 @@ export const PrimaryDisabled: Story = {
     variant: "primary",
     children: "Primary",
     disabled: true,
+  },
+};
+
+export const PrimarySmall: Story = {
+  args: {
+    variant: "primary",
+    size: "sm",
+    children: "Small",
   },
 };
 

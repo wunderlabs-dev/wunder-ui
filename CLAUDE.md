@@ -55,6 +55,7 @@ src/
 - Each component lives in its own directory with a barrel `index.ts`
 - Every component must have a corresponding `.stories.tsx` file
 - Use `tags: ["autodocs"]` in story meta for automatic documentation
+- Never use unary `&&` for conditional rendering. Always use ternary: `{condition ? <Foo /> : null}`
 
 ## Styling
 

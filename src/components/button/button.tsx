@@ -44,7 +44,7 @@ const buttonVariants = cva(
         contained: cn(
           "bg-gray-900 border-gray-500",
           "before:bg-linear-to-bl before:from-gray-900 before:to-gray-700",
-          "hover:border-transparent",
+          "hover:border-gray-500",
           "active:bg-gray-900 active:border-transparent active:shadow-card-inset",
           "disabled:bg-gray-900 disabled:border-transparent disabled:text-gray-300",
         ),
@@ -65,6 +65,7 @@ const buttonVariants = cva(
       },
       size: {
         default: "px-5",
+        sm: "h-auto px-3 py-1 [&_svg]:size-3",
         icon: "w-12 p-3",
       },
     },
@@ -87,7 +88,7 @@ const Button = ({
   className,
   variant = "primary",
   size = "default",
-  asChild = false,
+  asChild,
   ...props
 }: ButtonProps) => {
   const Comp = asChild ? Slot.Root : "button";
