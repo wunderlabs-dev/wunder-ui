@@ -6,7 +6,7 @@ import { cn } from "@/helpers/utils";
 const typographyVariants = cva("inline-flex items-center gap-2", {
   variants: {
     variant: {
-      h1: "text-5xl leading-10",
+      h1: "text-4xl leading-10",
       h2: "text-base leading-6",
       body1: "text-xs leading-4",
       body2: "text-sm leading-5",

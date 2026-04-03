@@ -81,7 +81,7 @@ src/
 
 ### Typography
 
-4 variants: `h1` (48px semibold), `h2` (16px normal), `body1` (12px normal), `body2` (14px normal). Props: `variant`, `color` (default/muted/accent/success/warning/error/inherit), `weight` (normal/medium/semibold/bold), `as` (element override). Each variant has a default weight.
+4 variants: `h1` (36px semibold), `h2` (16px normal), `body1` (12px normal), `body2` (14px normal). Props: `variant`, `color` (default/muted/accent/success/warning/error/inherit), `weight` (normal/medium/semibold/bold), `as` (element override). Each variant has a default weight.
 
 ### NavList
 
