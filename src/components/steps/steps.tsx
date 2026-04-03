@@ -11,7 +11,7 @@ const Steps = ({ className, ...props }: StepsProps) => {
   return <ul className={cn("flex flex-col gap-6", className)} {...props} />;
 };
 
-const stepIndicatorVariants = cva("flex items-center justify-center size-6 rounded-full shrink-0", {
+const stepIndicatorVariants = cva("flex shrink-0 items-center justify-center size-6 rounded-full", {
   variants: {
     variant: {
       success: "border border-green-400",

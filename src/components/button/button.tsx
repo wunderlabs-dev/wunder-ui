@@ -6,11 +6,10 @@ import { cn } from "@/helpers/utils";
 
 const buttonVariants = cva(
   cn(
-    "inline-flex items-center justify-center h-12 gap-3 rounded-full",
+    "relative isolate inline-flex h-12 items-center justify-center gap-3 overflow-clip rounded-full",
     "border border-transparent",
     "text-base font-semibold leading-6 text-gray-50 whitespace-nowrap",
     "cursor-pointer select-none transition-all duration-150",
-    "relative isolate overflow-clip",
     "before:absolute before:inset-0 before:-z-10 before:rounded-[inherit]",
     "before:opacity-0 before:transition-opacity before:duration-150",
     "hover:before:opacity-100",

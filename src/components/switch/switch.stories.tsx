@@ -41,7 +41,7 @@ export const DisabledChecked: Story = {
 
 export const WithLabel: Story = {
   render: () => (
-    <label className="flex items-center gap-3 text-gray-50 text-base cursor-pointer">
+    <label className="flex cursor-pointer items-center gap-3 text-base text-gray-50">
       <Switch />
       Enable notifications
     </label>

@@ -39,7 +39,7 @@ export const Primary: Story = {
   render: (args) => (
     <Card {...args}>
       <CardContent>
-        <p className="text-gray-50 text-lg font-semibold">Primary Card</p>
+        <p className="text-lg font-semibold text-gray-50">Primary Card</p>
         <p className="text-gray-200">Card content goes here.</p>
       </CardContent>
     </Card>
@@ -53,7 +53,7 @@ export const Secondary: Story = {
   render: (args) => (
     <Card {...args}>
       <CardContent>
-        <p className="text-gray-50 text-lg font-semibold">Secondary Card</p>
+        <p className="text-lg font-semibold text-gray-50">Secondary Card</p>
         <p className="text-gray-200">Card content goes here.</p>
       </CardContent>
     </Card>
@@ -67,7 +67,7 @@ export const Solid: Story = {
   render: (args) => (
     <Card {...args}>
       <CardContent>
-        <p className="text-gray-50 text-lg font-semibold">Solid Card</p>
+        <p className="text-lg font-semibold text-gray-50">Solid Card</p>
         <p className="text-gray-200">Card content goes here.</p>
       </CardContent>
     </Card>
@@ -81,7 +81,7 @@ export const Outlined: Story = {
   render: (args) => (
     <Card {...args}>
       <CardContent>
-        <p className="text-gray-50 text-lg font-semibold">Outlined Card</p>
+        <p className="text-lg font-semibold text-gray-50">Outlined Card</p>
         <p className="text-gray-200">Card content goes here.</p>
       </CardContent>
     </Card>
@@ -95,7 +95,7 @@ export const Contained: Story = {
   render: (args) => (
     <Card {...args}>
       <CardContent>
-        <p className="text-gray-50 text-lg font-semibold">Contained Card</p>
+        <p className="text-lg font-semibold text-gray-50">Contained Card</p>
         <p className="text-gray-200">Card content goes here.</p>
       </CardContent>
     </Card>

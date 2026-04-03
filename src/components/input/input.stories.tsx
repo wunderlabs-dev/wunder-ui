@@ -33,7 +33,7 @@ export const Disabled: Story = {
 
 export const AllStates: Story = {
   render: () => (
-    <div className="flex flex-col gap-6 w-full max-w-md">
+    <div className="flex w-full max-w-md flex-col gap-6">
       <Input placeholder="Default" />
       <Input placeholder="Disabled" disabled />
     </div>

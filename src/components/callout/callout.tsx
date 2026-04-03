@@ -42,7 +42,7 @@ const CalloutBody = ({ className, children, ...props }: CalloutBodyProps) => {
   return (
     <div
       data-slot="callout-body"
-      className={cn("border-l border-gray-100/30 ml-2 pl-2", className)}
+      className={cn("ml-2 border-l border-gray-100/30 pl-2", className)}
       {...props}
     >
       <Typography variant="body2">{children}</Typography>

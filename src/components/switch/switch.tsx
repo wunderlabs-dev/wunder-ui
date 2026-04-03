@@ -10,7 +10,7 @@ const Switch = ({ className, ...props }: SwitchProps) => {
     <SwitchPrimitive.Root
       data-slot="switch"
       className={cn(
-        "peer inline-flex h-4 w-8 shrink-0 cursor-pointer items-center rounded-full p-0.5",
+        "peer inline-flex h-4 w-8 shrink-0 items-center rounded-full p-0.5 cursor-pointer",
         "transition-colors duration-150",
         "bg-gray-100/20",
         "data-[state=checked]:bg-amber-500",
