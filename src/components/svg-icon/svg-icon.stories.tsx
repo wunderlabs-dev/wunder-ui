@@ -78,7 +78,6 @@ export const Colors: Story = {
       <SvgIconCursor size="lg" color="default" className="text-gray-50" />
       <SvgIconCursor size="lg" color="neutral" />
       <SvgIconCursor size="lg" color="primary" />
-      <SvgIconCursor size="lg" color="accent" />
     </div>
   ),
 };

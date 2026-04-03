@@ -22,7 +22,7 @@ const Switch = ({ className, ...props }: SwitchProps) => {
       <SwitchPrimitive.Thumb
         className={cn(
           "pointer-events-none block size-3 rounded-full shadow-sm",
-          "transition-transform duration-150",
+          "transition-all duration-150",
           "bg-gray-100/10 data-[state=checked]:bg-gray-50",
           "translate-x-0 data-[state=checked]:translate-x-4",
         )}

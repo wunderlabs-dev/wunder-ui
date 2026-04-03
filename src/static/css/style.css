@@ -4,14 +4,6 @@
 @theme {
   --font-sans: "Host Grotesk Variable", sans-serif;
 
-  /* Reset default Tailwind palettes */
-  --color-gray-*: initial;
-  --color-orange-*: initial;
-  --color-amber-*: initial;
-  --color-green-*: initial;
-  --color-yellow-*: initial;
-  --color-red-*: initial;
-
   --color-gray-50: #ffffff;
   --color-gray-100: #b5b5b5;
   --color-gray-200: #808080;
@@ -42,8 +34,6 @@
 
 @layer base {
   body {
-    font-family: var(--font-sans);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    @apply font-sans antialiased;
   }
 }

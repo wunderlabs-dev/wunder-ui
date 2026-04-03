@@ -3,7 +3,7 @@ import type { ReactNode, HTMLAttributes } from "react";
 import { cn } from "@/helpers/utils";
 
 const SvgIconSizes = ["xs", "sm", "md", "lg", "xl", "auto"] as const;
-const SvgIconColors = ["default", "neutral", "primary", "accent"] as const;
+const SvgIconColors = ["default", "neutral", "primary"] as const;
 
 type SvgIconSize = (typeof SvgIconSizes)[number];
 type SvgIconColor = (typeof SvgIconColors)[number];
@@ -29,7 +29,6 @@ const svgIconColorClassNames: Record<SvgIconColor, string> = {
   default: "text-current",
   neutral: "text-grey-100",
   primary: "text-amber-500",
-  accent: "text-amber-500",
 } as const;
 
 const SvgIcon = ({
