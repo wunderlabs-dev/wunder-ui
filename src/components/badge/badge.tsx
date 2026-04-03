@@ -7,7 +7,7 @@ const badgeVariants = cva(
   cn(
     "inline-flex items-center justify-center gap-1 rounded-lg",
     "px-2 py-1",
-    "text-sm font-normal leading-none uppercase whitespace-nowrap",
+    "select-none text-sm font-normal leading-none uppercase whitespace-nowrap",
     "[&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-3",
   ),
   {

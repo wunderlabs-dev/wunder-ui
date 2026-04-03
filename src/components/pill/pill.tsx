@@ -7,7 +7,7 @@ const pillVariants = cva(
   cn(
     "inline-flex items-center justify-center gap-2 rounded-lg",
     "px-2 py-0.5",
-    "text-xs font-extralight leading-3 uppercase whitespace-nowrap",
+    "select-none text-xs font-extralight leading-3 uppercase whitespace-nowrap",
     "[&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-3",
   ),
   {
