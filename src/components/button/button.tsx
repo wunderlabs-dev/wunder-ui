@@ -21,9 +21,10 @@ const buttonVariants = cva(
     variants: {
       variant: {
         link: cn(
-          "h-auto border-0 before:hidden",
-          "hover:underline hover:decoration-amber-500 hover:underline-offset-4",
-          "active:underline active:text-amber-500 active:decoration-amber-500 active:underline-offset-4",
+          "h-auto rounded-none border-0 before:hidden",
+          "decoration-transparent decoration-1 underline-offset-4",
+          "hover:underline hover:decoration-amber-500",
+          "active:underline active:decoration-amber-500 active:text-amber-500",
           "disabled:text-gray-600",
         ),
         primary: cn(

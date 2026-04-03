@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { Button } from "./button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/avatar";
+import { SvgIconChevronRight } from "@/components/svg-icon/svg-icon-chevron-right";
 
 const meta = {
   title: "Components/Button",
@@ -79,6 +80,15 @@ export const Link: Story = {
     variant: "link",
     children: "Link",
   },
+};
+
+export const LinkWithIcon: Story = {
+  render: () => (
+    <Button variant="link">
+      Link
+      <SvgIconChevronRight size="sm" />
+    </Button>
+  ),
 };
 
 export const Success: Story = {
