@@ -33,7 +33,7 @@ const AvatarFallback = ({ className, ...props }: AvatarFallbackProps) => {
       data-slot="avatar-fallback"
       className={cn(
         "flex size-full items-center justify-center rounded-full",
-        "bg-gray-100/10 text-base font-semibold italic text-amber-400",
+        "bg-gray-100/10 text-base font-semibold text-amber-400",
         className,
       )}
       {...props}
