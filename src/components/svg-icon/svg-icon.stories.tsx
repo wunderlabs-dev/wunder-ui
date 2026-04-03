@@ -8,6 +8,7 @@ import { SvgIconGear } from "./svg-icon-gear";
 import { SvgIconGlitters } from "./svg-icon-glitters";
 import { SvgIconOpenable } from "./svg-icon-openable";
 import { SvgIconOpenableSymbol } from "./svg-icon-openable-symbol";
+import { SvgIconBrowser } from "./svg-icon-browser";
 
 const meta = {
   title: "Components/SvgIcon",
@@ -78,6 +79,14 @@ export const Colors: Story = {
       <SvgIconCursor size="lg" color="default" className="text-gray-50" />
       <SvgIconCursor size="lg" color="neutral" />
       <SvgIconCursor size="lg" color="primary" />
+    </div>
+  ),
+};
+
+export const Browser: Story = {
+  render: () => (
+    <div className="max-w-lg">
+      <SvgIconBrowser />
     </div>
   ),
 };
