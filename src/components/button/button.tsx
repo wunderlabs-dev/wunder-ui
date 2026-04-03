@@ -62,6 +62,12 @@ const buttonVariants = cva(
           "active:bg-red-400/60 active:border-transparent active:shadow-card-inset",
           "disabled:bg-red-400/10 disabled:border-transparent disabled:text-gray-600",
         ),
+        ghost: cn(
+          "h-auto border-0 p-0 before:hidden",
+          "hover:text-amber-500",
+          "active:text-amber-700",
+          "disabled:text-gray-600",
+        ),
       },
       size: {
         default: "px-5",

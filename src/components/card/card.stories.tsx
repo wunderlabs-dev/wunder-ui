@@ -15,11 +15,15 @@ const meta = {
   argTypes: {
     variant: {
       control: "select",
-      options: ["solid", "glass"],
+      options: ["primary", "secondary", "solid", "outlined", "contained"],
     },
     spacing: {
       control: "select",
-      options: ["none", "sm", "md", "lg"],
+      options: ["none", "xs", "sm", "md", "lg", "xl"],
+    },
+    rounded: {
+      control: "select",
+      options: ["sm", "md"],
     },
   },
 } satisfies Meta<typeof Card>;
@@ -28,6 +32,34 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
+export const Primary: Story = {
+  args: {
+    variant: "primary",
+  },
+  render: (args) => (
+    <Card {...args}>
+      <CardContent>
+        <p className="text-gray-50 text-lg font-semibold">Primary Card</p>
+        <p className="text-gray-200">Card content goes here.</p>
+      </CardContent>
+    </Card>
+  ),
+};
+
+export const Secondary: Story = {
+  args: {
+    variant: "secondary",
+  },
+  render: (args) => (
+    <Card {...args}>
+      <CardContent>
+        <p className="text-gray-50 text-lg font-semibold">Secondary Card</p>
+        <p className="text-gray-200">Card content goes here.</p>
+      </CardContent>
+    </Card>
+  ),
+};
+
 export const Solid: Story = {
   args: {
     variant: "solid",
@@ -35,31 +67,59 @@ export const Solid: Story = {
   render: (args) => (
     <Card {...args}>
       <CardContent>
-        <p className="text-gray-50 text-lg font-semibold">Card Title</p>
+        <p className="text-gray-50 text-lg font-semibold">Solid Card</p>
         <p className="text-gray-200">Card content goes here.</p>
       </CardContent>
     </Card>
   ),
 };
 
-export const Glass: Story = {
+export const Outlined: Story = {
   args: {
-    variant: "glass",
+    variant: "outlined",
   },
   render: (args) => (
     <Card {...args}>
       <CardContent>
-        <p className="text-gray-50 text-lg font-semibold">Glass Card</p>
-        <p className="text-gray-200">With backdrop blur effect.</p>
+        <p className="text-gray-50 text-lg font-semibold">Outlined Card</p>
+        <p className="text-gray-200">Card content goes here.</p>
       </CardContent>
     </Card>
+  ),
+};
+
+export const Contained: Story = {
+  args: {
+    variant: "contained",
+  },
+  render: (args) => (
+    <Card {...args}>
+      <CardContent>
+        <p className="text-gray-50 text-lg font-semibold">Contained Card</p>
+        <p className="text-gray-200">Card content goes here.</p>
+      </CardContent>
+    </Card>
+  ),
+};
+
+export const Variants: Story = {
+  render: () => (
+    <div className="flex flex-col gap-4">
+      {(["primary", "secondary", "solid", "outlined", "contained"] as const).map((variant) => (
+        <Card key={variant} variant={variant}>
+          <CardContent>
+            <p className="text-gray-50 font-semibold">{variant}</p>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
   ),
 };
 
 export const Spacings: Story = {
   render: () => (
     <div className="flex flex-col gap-4">
-      {(["none", "sm", "md", "lg"] as const).map((spacing) => (
+      {(["none", "xs", "sm", "md", "lg", "xl"] as const).map((spacing) => (
         <Card key={spacing} spacing={spacing}>
           <CardContent>
             <p className="text-gray-50 font-semibold">Spacing: {spacing}</p>

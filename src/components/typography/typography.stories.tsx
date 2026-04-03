@@ -15,7 +15,11 @@ const meta = {
   argTypes: {
     variant: {
       control: "select",
-      options: ["heading", "subtitle", "paragraph"],
+      options: ["h1", "h2", "body1", "body2"],
+    },
+    weight: {
+      control: "select",
+      options: ["normal", "medium", "semibold", "bold"],
     },
   },
 } satisfies Meta<typeof Typography>;
@@ -24,36 +28,48 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Heading: Story = {
+export const H1: Story = {
   args: {
-    variant: "heading",
+    variant: "h1",
     children: "Heading One",
   },
 };
 
-export const Subtitle: Story = {
+export const H2: Story = {
   args: {
-    variant: "subtitle",
-    children: "Subtitle text",
+    variant: "h2",
+    children: "Heading Two",
   },
 };
 
-export const Paragraph: Story = {
+export const Body1: Story = {
   args: {
-    variant: "paragraph",
+    variant: "body1",
     children:
-      "Paragraph text example with paragraph spacing. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Body1 text example. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+};
+
+export const Body2: Story = {
+  args: {
+    variant: "body2",
+    children:
+      "Body2 text example. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
 };
 
 export const AllVariants: Story = {
   render: () => (
     <div className="flex flex-col gap-4">
-      <Typography variant="heading">Heading One</Typography>
-      <Typography variant="subtitle">Subtitle text</Typography>
-      <Typography variant="paragraph">
-        Paragraph text example with paragraph spacing. Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      <Typography variant="h1">Heading One</Typography>
+      <Typography variant="h2">Heading Two</Typography>
+      <Typography variant="body1">
+        Body1 text example. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </Typography>
+      <Typography variant="body2">
+        Body2 text example. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
       </Typography>
     </div>
   ),
