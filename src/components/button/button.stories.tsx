@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Button } from "./button";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/avatar";
 
 const meta = {
   title: "Components/Button",
@@ -15,7 +16,7 @@ const meta = {
   argTypes: {
     variant: {
       control: "select",
-      options: ["link", "primary", "secondary", "contained", "success", "error"],
+      options: ["link", "primary", "secondary", "contained", "success", "error", "ghost"],
     },
     size: {
       control: "select",
@@ -92,4 +93,20 @@ export const Error: Story = {
     variant: "error",
     children: "Error",
   },
+};
+
+export const WithStartAdornment: Story = {
+  render: () => (
+    <Button
+      variant="secondary"
+      startAdornment={
+        <Avatar>
+          <AvatarImage src="https://github.com/balajmarius.png" alt="Marius" />
+          <AvatarFallback>M</AvatarFallback>
+        </Avatar>
+      }
+    >
+      Marius
+    </Button>
+  ),
 };

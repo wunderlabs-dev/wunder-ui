@@ -66,7 +66,7 @@ const NavListItem = ({ action, active, className, children, ...props }: NavListI
         "relative flex w-full items-center justify-between rounded px-3 py-1",
         "cursor-pointer transition-all duration-150",
         "hover:bg-gray-900",
-        active && "bg-gray-800 shadow-card-inset",
+        active ? "bg-gray-800 shadow-card-inset" : undefined,
         className,
       )}
       {...props}
@@ -74,7 +74,7 @@ const NavListItem = ({ action, active, className, children, ...props }: NavListI
       <Typography as="span" variant="body2">
         {children}
       </Typography>
-      {action ? <span className="shrink-0">{action}</span> : null}
+      {action ? <span className="shrink-0 inline-flex items-center">{action}</span> : null}
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import type { ComponentProps } from "react";
+import type { ComponentProps, ReactNode } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { Slot } from "radix-ui";
 
@@ -87,6 +87,7 @@ type ButtonSize = NonNullable<VariantProps<typeof buttonVariants>["size"]>;
 
 interface ButtonProps extends ComponentProps<"button">, VariantProps<typeof buttonVariants> {
   asChild?: boolean;
+  startAdornment?: ReactNode;
 }
 
 const Button = ({
@@ -94,6 +95,8 @@ const Button = ({
   variant = "primary",
   size = "default",
   asChild,
+  startAdornment,
+  children,
   ...props
 }: ButtonProps) => {
   const Comp = asChild ? Slot.Root : "button";
@@ -103,9 +106,16 @@ const Button = ({
       data-slot="button"
       data-variant={variant}
       data-size={size}
-      className={cn(buttonVariants({ variant, size, className }))}
+      className={cn(
+        buttonVariants({ variant, size }),
+        startAdornment && "gap-3 py-2 pl-2 pr-5",
+        className,
+      )}
       {...props}
-    />
+    >
+      {startAdornment ? <span className="shrink-0">{startAdornment}</span> : null}
+      {children}
+    </Comp>
   );
 };
 
