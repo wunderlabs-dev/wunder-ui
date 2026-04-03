@@ -10,6 +10,7 @@ import {
 import { Switch } from "@/components/switch";
 import { SvgIconPlay } from "@/components/svg-icon/svg-icon-play";
 import { SvgIconFolder } from "@/components/svg-icon/svg-icon-folder";
+import { SvgIconGear } from "@/components/svg-icon/svg-icon-gear";
 
 const meta = {
   title: "Components/NavList",
@@ -55,6 +56,19 @@ export const Default: Story = {
           <NavListItem>Page Proto</NavListItem>
           <NavListItem>Design Sandbox</NavListItem>
           <NavListItem>Frontend Test 3D</NavListItem>
+        </NavListGroupItems>
+      </NavListGroup>
+    </NavList>
+  ),
+};
+
+export const Flat: Story = {
+  render: () => (
+    <NavList className="w-46">
+      <NavListGroup>
+        <NavListGroupItems variant="flat">
+          <NavListItem icon={<SvgIconGear size="sm" />}>Switch account</NavListItem>
+          <NavListItem icon={<SvgIconGear size="sm" />}>Settings</NavListItem>
         </NavListGroupItems>
       </NavListGroup>
     </NavList>

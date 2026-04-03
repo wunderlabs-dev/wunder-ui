@@ -41,24 +41,37 @@ const NavListGroupTitle = ({ icon, className, children, ...props }: NavListGroup
   );
 };
 
-type NavListGroupItemsProps = ComponentProps<"div">;
+type NavListGroupItemsVariant = "default" | "flat";
 
-const NavListGroupItems = ({ className, ...props }: NavListGroupItemsProps) => {
+type NavListGroupItemsProps = ComponentProps<"div"> & {
+  variant?: NavListGroupItemsVariant;
+};
+
+const NavListGroupItems = ({
+  variant = "default",
+  className,
+  ...props
+}: NavListGroupItemsProps) => {
   return (
     <div
       data-slot="nav-list-group-items"
-      className={cn("ml-2 flex flex-col gap-2 border-l border-gray-100/30 pl-2", className)}
+      className={cn(
+        "flex flex-col gap-2",
+        variant === "default" && "ml-2 border-l border-gray-100/30 pl-2",
+        className,
+      )}
       {...props}
     />
   );
 };
 
 type NavListItemProps = ComponentProps<"div"> & {
+  icon?: ReactNode;
   action?: ReactNode;
   active?: boolean;
 };
 
-const NavListItem = ({ action, active, className, children, ...props }: NavListItemProps) => {
+const NavListItem = ({ icon, action, active, className, children, ...props }: NavListItemProps) => {
   return (
     <div
       data-slot="nav-list-item"
@@ -66,15 +79,18 @@ const NavListItem = ({ action, active, className, children, ...props }: NavListI
         "relative flex w-full items-center justify-between rounded px-3 py-1",
         "cursor-pointer transition-all duration-150",
         "hover:bg-gray-900",
-        active ? "bg-gray-800 shadow-card-inset" : undefined,
+        active && "bg-gray-800 shadow-card-inset",
         className,
       )}
       {...props}
     >
-      <Typography as="span" variant="body2">
-        {children}
-      </Typography>
-      {action ? <span className="shrink-0 inline-flex items-center">{action}</span> : null}
+      <span className="flex items-center gap-2">
+        {icon ? <span className="shrink-0 text-gray-50 [&_svg]:size-4">{icon}</span> : null}
+        <Typography as="span" variant="body2">
+          {children}
+        </Typography>
+      </span>
+      {action ? <span className="inline-flex shrink-0 items-center">{action}</span> : null}
     </div>
   );
 };
@@ -85,5 +101,6 @@ export type {
   NavListGroupProps,
   NavListGroupTitleProps,
   NavListGroupItemsProps,
+  NavListGroupItemsVariant,
   NavListItemProps,
 };

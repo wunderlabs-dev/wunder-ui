@@ -10,5 +10,6 @@ export type {
   NavListGroupProps,
   NavListGroupTitleProps,
   NavListGroupItemsProps,
+  NavListGroupItemsVariant,
   NavListItemProps,
 } from "./nav-list";
